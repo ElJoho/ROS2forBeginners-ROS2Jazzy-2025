@@ -1,0 +1,194 @@
+[0.000000] (-) TimerEvent: {}
+[0.001038] (my_py_pkg) JobQueued: {'identifier': 'my_py_pkg', 'dependencies': OrderedDict()}
+[0.003503] (my_py_pkg) JobStarted: {'identifier': 'my_py_pkg'}
+[0.099154] (-) TimerEvent: {}
+[0.199886] (-) TimerEvent: {}
+[0.300960] (-) TimerEvent: {}
+[0.402232] (-) TimerEvent: {}
+[0.504329] (-) TimerEvent: {}
+[0.608424] (-) TimerEvent: {}
+[0.711838] (-) TimerEvent: {}
+[0.813830] (-) TimerEvent: {}
+[0.915439] (-) TimerEvent: {}
+[1.017080] (-) TimerEvent: {}
+[1.117894] (-) TimerEvent: {}
+[1.219437] (-) TimerEvent: {}
+[1.320826] (-) TimerEvent: {}
+[1.421570] (-) TimerEvent: {}
+[1.522867] (-) TimerEvent: {}
+[1.623738] (-) TimerEvent: {}
+[1.725516] (-) TimerEvent: {}
+[1.827272] (-) TimerEvent: {}
+[1.928626] (-) TimerEvent: {}
+[2.029409] (-) TimerEvent: {}
+[2.130870] (-) TimerEvent: {}
+[2.232025] (-) TimerEvent: {}
+[2.333530] (-) TimerEvent: {}
+[2.434165] (-) TimerEvent: {}
+[2.534841] (-) TimerEvent: {}
+[2.635577] (-) TimerEvent: {}
+[2.737363] (-) TimerEvent: {}
+[2.838909] (-) TimerEvent: {}
+[2.939462] (-) TimerEvent: {}
+[3.040192] (-) TimerEvent: {}
+[3.141318] (-) TimerEvent: {}
+[3.242293] (-) TimerEvent: {}
+[3.342772] (-) TimerEvent: {}
+[3.443300] (-) TimerEvent: {}
+[3.543838] (-) TimerEvent: {}
+[3.644573] (-) TimerEvent: {}
+[3.746433] (-) TimerEvent: {}
+[3.848286] (-) TimerEvent: {}
+[3.949784] (-) TimerEvent: {}
+[4.050414] (-) TimerEvent: {}
+[4.151189] (-) TimerEvent: {}
+[4.252661] (-) TimerEvent: {}
+[4.353146] (-) TimerEvent: {}
+[4.453803] (-) TimerEvent: {}
+[4.555338] (-) TimerEvent: {}
+[4.656930] (-) TimerEvent: {}
+[4.758588] (-) TimerEvent: {}
+[4.860098] (-) TimerEvent: {}
+[4.960831] (-) TimerEvent: {}
+[5.062267] (-) TimerEvent: {}
+[5.162940] (-) TimerEvent: {}
+[5.264583] (-) TimerEvent: {}
+[5.366249] (-) TimerEvent: {}
+[5.467812] (-) TimerEvent: {}
+[5.568890] (-) TimerEvent: {}
+[5.669416] (-) TimerEvent: {}
+[5.770172] (-) TimerEvent: {}
+[5.871827] (-) TimerEvent: {}
+[5.973206] (-) TimerEvent: {}
+[6.074785] (-) TimerEvent: {}
+[6.176511] (-) TimerEvent: {}
+[6.277861] (-) TimerEvent: {}
+[6.378391] (-) TimerEvent: {}
+[6.480034] (-) TimerEvent: {}
+[6.581333] (-) TimerEvent: {}
+[6.682995] (-) TimerEvent: {}
+[6.784868] (-) TimerEvent: {}
+[6.886549] (-) TimerEvent: {}
+[6.988254] (-) TimerEvent: {}
+[7.089964] (-) TimerEvent: {}
+[7.191417] (-) TimerEvent: {}
+[7.292198] (-) TimerEvent: {}
+[7.393892] (-) TimerEvent: {}
+[7.495586] (-) TimerEvent: {}
+[7.596949] (-) TimerEvent: {}
+[7.698560] (-) TimerEvent: {}
+[7.800211] (-) TimerEvent: {}
+[7.901717] (-) TimerEvent: {}
+[8.003309] (-) TimerEvent: {}
+[8.105167] (-) TimerEvent: {}
+[8.206711] (-) TimerEvent: {}
+[8.308328] (-) TimerEvent: {}
+[8.409993] (-) TimerEvent: {}
+[8.511617] (-) TimerEvent: {}
+[8.612994] (-) TimerEvent: {}
+[8.713764] (-) TimerEvent: {}
+[8.816607] (-) TimerEvent: {}
+[8.918146] (-) TimerEvent: {}
+[9.018844] (-) TimerEvent: {}
+[9.120772] (-) TimerEvent: {}
+[9.221274] (-) TimerEvent: {}
+[9.321762] (-) TimerEvent: {}
+[9.422268] (-) TimerEvent: {}
+[9.522749] (-) TimerEvent: {}
+[9.623343] (-) TimerEvent: {}
+[9.723935] (-) TimerEvent: {}
+[9.825589] (-) TimerEvent: {}
+[9.927350] (-) TimerEvent: {}
+[10.028914] (-) TimerEvent: {}
+[10.130550] (-) TimerEvent: {}
+[10.232299] (-) TimerEvent: {}
+[10.333881] (-) TimerEvent: {}
+[10.435724] (-) TimerEvent: {}
+[10.537234] (-) TimerEvent: {}
+[10.638311] (-) TimerEvent: {}
+[10.739639] (-) TimerEvent: {}
+[10.841041] (-) TimerEvent: {}
+[10.941628] (-) TimerEvent: {}
+[11.042723] (-) TimerEvent: {}
+[11.143324] (-) TimerEvent: {}
+[11.244079] (-) TimerEvent: {}
+[11.344724] (-) TimerEvent: {}
+[11.445468] (-) TimerEvent: {}
+[11.546158] (-) TimerEvent: {}
+[11.646672] (-) TimerEvent: {}
+[11.747197] (-) TimerEvent: {}
+[11.847929] (-) TimerEvent: {}
+[11.948701] (-) TimerEvent: {}
+[12.050094] (-) TimerEvent: {}
+[12.151069] (-) TimerEvent: {}
+[12.251620] (-) TimerEvent: {}
+[12.352139] (-) TimerEvent: {}
+[12.452680] (-) TimerEvent: {}
+[12.553308] (-) TimerEvent: {}
+[12.653972] (-) TimerEvent: {}
+[12.725596] (my_py_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/my_py_pkg', 'build', '--build-base', '/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/build', 'install', '--record', '/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/src/my_py_pkg', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/1614-2-johanito-HP-Pavilion-11-x360-PC_TIME12873019', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'johanito', 'LC_TIME': 'es_CO.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'VREP_ROOT': '/johanito/Documents/coppeliasim', 'HOME': '/home/johanito', 'OLDPWD': '/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/src', 'hardware_interface_DIR': '/opt/ros/humble/share/hardware_interface/cmake', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'es_CO.UTF-8', 'MANAGERPID': '1361', 'SYSTEMD_EXEC_PID': '1614', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '36662', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'johanito', 'JOURNAL_STREAM': '8:16523', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'johanito', 'TERM': 'xterm-256color', 'COPPELIASIM_ROOT_DIR': '/home/johanito/Documents/coppeliasim', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/johanito/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/johanito-HP-Pavilion-11-x360-PC:@/tmp/.ICE-unix/1573,unix/johanito-HP-Pavilion-11-x360-PC:/tmp/.ICE-unix/1573', 'CMAKE': '/usr/bin/cmake', 'INVOCATION_ID': '30325d9a29794cb29e542a555f037af3', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'es_CO.UTF-8', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'es_CO.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.R99NE3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'es_CO.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:21ef4f4e-35ec-4070-8ce6-0a83c0c56e73', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_CO.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'es_CO.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'es_CO.UTF-8', 'LC_PAPER': 'es_CO.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[12.754548] (-) TimerEvent: {}
+[12.855268] (-) TimerEvent: {}
+[12.955846] (-) TimerEvent: {}
+[13.056896] (-) TimerEvent: {}
+[13.157493] (-) TimerEvent: {}
+[13.258007] (-) TimerEvent: {}
+[13.358546] (-) TimerEvent: {}
+[13.459093] (-) TimerEvent: {}
+[13.559661] (-) TimerEvent: {}
+[13.660155] (-) TimerEvent: {}
+[13.760669] (-) TimerEvent: {}
+[13.861151] (-) TimerEvent: {}
+[13.961659] (-) TimerEvent: {}
+[14.062153] (-) TimerEvent: {}
+[14.162684] (-) TimerEvent: {}
+[14.222166] (my_py_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[14.225277] (my_py_pkg) StdoutLine: {'line': b'creating ../../build/my_py_pkg/my_py_pkg.egg-info\n'}
+[14.264398] (-) TimerEvent: {}
+[14.364975] (-) TimerEvent: {}
+[14.389447] (my_py_pkg) StdoutLine: {'line': b'writing ../../build/my_py_pkg/my_py_pkg.egg-info/PKG-INFO\n'}
+[14.393345] (my_py_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/my_py_pkg/my_py_pkg.egg-info/dependency_links.txt\n'}
+[14.394133] (my_py_pkg) StdoutLine: {'line': b'writing requirements to ../../build/my_py_pkg/my_py_pkg.egg-info/requires.txt\n'}
+[14.394668] (my_py_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/my_py_pkg/my_py_pkg.egg-info/top_level.txt\n'}
+[14.395349] (my_py_pkg) StdoutLine: {'line': b"writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'\n"}
+[14.465203] (-) TimerEvent: {}
+[14.566152] (-) TimerEvent: {}
+[14.632986] (my_py_pkg) StdoutLine: {'line': b"reading manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'\n"}
+[14.635910] (my_py_pkg) StdoutLine: {'line': b"writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'\n"}
+[14.637792] (my_py_pkg) StdoutLine: {'line': b'running build\n'}
+[14.639418] (my_py_pkg) StdoutLine: {'line': b'running build_py\n'}
+[14.641775] (my_py_pkg) StdoutLine: {'line': b'creating /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/build\n'}
+[14.643272] (my_py_pkg) StdoutLine: {'line': b'creating /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/build/lib\n'}
+[14.644638] (my_py_pkg) StdoutLine: {'line': b'creating /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg\n'}
+[14.646004] (my_py_pkg) StdoutLine: {'line': b'copying my_py_pkg/__init__.py -> /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg\n'}
+[14.647390] (my_py_pkg) StdoutLine: {'line': b'running install\n'}
+[14.666581] (-) TimerEvent: {}
+[14.671202] (my_py_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[14.767265] (-) TimerEvent: {}
+[14.789337] (my_py_pkg) StdoutLine: {'line': b'creating /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages/my_py_pkg\n'}
+[14.792475] (my_py_pkg) StdoutLine: {'line': b'copying /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/__init__.py -> /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages/my_py_pkg\n'}
+[14.794864] (my_py_pkg) StdoutLine: {'line': b'byte-compiling /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages/my_py_pkg/__init__.py to __init__.cpython-312.pyc\n'}
+[14.797032] (my_py_pkg) StdoutLine: {'line': b'running install_data\n'}
+[14.799111] (my_py_pkg) StdoutLine: {'line': b'creating /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/share/ament_index\n'}
+[14.800738] (my_py_pkg) StdoutLine: {'line': b'creating /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/share/ament_index/resource_index\n'}
+[14.801866] (my_py_pkg) StdoutLine: {'line': b'creating /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/share/ament_index/resource_index/packages\n'}
+[14.802891] (my_py_pkg) StdoutLine: {'line': b'copying resource/my_py_pkg -> /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/share/ament_index/resource_index/packages\n'}
+[14.803911] (my_py_pkg) StdoutLine: {'line': b'copying package.xml -> /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/share/my_py_pkg\n'}
+[14.805004] (my_py_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[14.867766] (-) TimerEvent: {}
+[14.912315] (my_py_pkg) StdoutLine: {'line': b'Copying ../../build/my_py_pkg/my_py_pkg.egg-info to /home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages/my_py_pkg-0.0.0-py3.12.egg-info\n'}
+[14.917457] (my_py_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[14.968281] (-) TimerEvent: {}
+[15.070016] (-) TimerEvent: {}
+[15.171652] (-) TimerEvent: {}
+[15.273408] (-) TimerEvent: {}
+[15.375164] (-) TimerEvent: {}
+[15.476554] (-) TimerEvent: {}
+[15.577334] (-) TimerEvent: {}
+[15.622693] (my_py_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/johanito/Documents/ROS2forBeginners-ROS2Jazzy-2025/ros2_ws/build/my_py_pkg/install.log'\n"}
+[15.677685] (-) TimerEvent: {}
+[15.751566] (my_py_pkg) CommandEnded: {'returncode': 0}
+[15.778022] (-) TimerEvent: {}
+[15.882495] (-) TimerEvent: {}
+[15.927644] (my_py_pkg) JobEnded: {'identifier': 'my_py_pkg', 'rc': 0}
+[15.935819] (-) EventReactorShutdown: {}
