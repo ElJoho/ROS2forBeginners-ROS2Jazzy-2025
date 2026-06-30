@@ -1,0 +1,286 @@
+# Class 21 — C++ Node with OOP + Timer
+
+## Why OOP (Same Reasons as Python)
+
+- **Official ROS2 recommendation** — all C++ example code uses it
+- **Scalable** — publishers, subscribers, timers, services all hook into the class via `this->`
+- Becomes a **reusable template** for every future C++ node
+
+---
+
+## Final Code
+
+```cpp
+#include "rclcpp/rclcpp.hpp"
+
+class MyNode : public rclcpp::Node {
+    public:
+        MyNode() : Node("cpp_test") {
+            RCLCPP_INFO(this->get_logger(), "Hellow world");
+
+            timer_ = this->create_wall_timer(
+                std::chrono::seconds(1),
+                std::bind(&MyNode::timerCallback, this)
+            );
+        }
+
+    private:
+        rclcpp::TimerBase::SharedPtr timer_;
+        int counter_;
+
+        void timerCallback() {
+            RCLCPP_INFO(this->get_logger(), "Hello %d", counter_);
+            counter_++;
+        }
+};
+
+int main(int argc, char **argv) {
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<MyNode>();
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
+```
+
+> ⚠️ The log says `"Hellow world"` — a typo in your code. Easy fix: `"Hello world"`. Worth noting because C++ won't catch typos in string literals.
+
+---
+
+## Anatomy
+
+### Class declaration + inheritance
+
+```cpp
+class MyNode : public rclcpp::Node {
+    // ...
+};   // ⚠️ semicolon mandatory after closing brace in C++ class
+```
+
+`public rclcpp::Node` → **public inheritance** from the Node class. `MyNode` IS a `Node`, so every ROS2 node functionality is accessible via `this->`.
+
+### Constructor with initializer list
+
+```cpp
+MyNode() : Node("cpp_test") {
+    // body
+}
+```
+
+The `: Node("cpp_test")` syntax is C++'s **member initializer list** — it calls the parent constructor with `"cpp_test"` as the node name. This is the C++ equivalent of Python's `super().__init__("cpp_test")`.
+
+### `this->` is optional but recommended
+
+```cpp
+this->get_logger()   // explicit — clear it's coming from the Node parent
+get_logger()         // also works
+```
+
+Used here as a convention to make it visually obvious which methods come from `rclcpp::Node`.
+
+### Simplified main
+
+```cpp
+auto node = std::make_shared<MyNode>();   // ← MyNode, not rclcpp::Node
+```
+
+Only this line changed: instantiate **your class**, not `rclcpp::Node` directly. The shared pointer pattern stays the same.
+
+---
+
+## Timer in C++
+
+C++ timer syntax is more verbose than Python, but the concept is identical: call a function repeatedly while the node spins.
+
+### Declaring the timer as a member
+
+```cpp
+private:
+    rclcpp::TimerBase::SharedPtr timer_;
+```
+
+- `rclcpp::TimerBase` — the timer class
+- `::SharedPtr` — a helper alias for `std::shared_ptr<rclcpp::TimerBase>`. Almost every ROS2 class exposes this `SharedPtr` typedef — use it instead of writing `std::shared_ptr<...>` longhand.
+
+### Creating the timer
+
+```cpp
+timer_ = this->create_wall_timer(
+    std::chrono::seconds(1),                        // period
+    std::bind(&MyNode::timerCallback, this)         // callback
+);
+```
+
+| Argument | Meaning |
+|---|---|
+| `std::chrono::seconds(1)` | Period — fire every 1 second. Use `milliseconds(100)` for 10 Hz, etc. |
+| `std::bind(&MyNode::timerCallback, this)` | Binds the method to **this specific instance** |
+
+### Decoding `std::bind`
+
+```cpp
+std::bind(&MyNode::timerCallback, this)
+//        ↑                       ↑
+//        function reference       instance to bind to
+```
+
+- `&MyNode::timerCallback` → **address of** the method (no parentheses → reference, not a call)
+- `this` → which object's method to call
+
+> Looks intimidating the first time. In practice it's always the same pattern: `std::bind(&ClassName::methodName, this)`. Once it's muscle memory, you stop thinking about it.
+
+> Python equivalent for comparison:
+> ```python
+> self.create_timer(1.0, self.timer_callback)
+> ```
+> C++ needs `std::bind` because methods carry an implicit `this` parameter that has to be bound explicitly.
+
+### Period — note the type
+
+`std::chrono::seconds(1)` is a `std::chrono::duration`, not a plain number. Other useful units from `<chrono>`:
+
+```cpp
+std::chrono::milliseconds(100)   // 10 Hz
+std::chrono::microseconds(500)
+```
+
+`#include <chrono>` is pulled in transitively through `rclcpp.hpp`, so no extra include is needed.
+
+---
+
+## Counter — Trailing Underscore Convention
+
+```cpp
+private:
+    int counter_;       // trailing _ = class attribute
+
+void timerCallback() {
+    RCLCPP_INFO(this->get_logger(), "Hello %d", counter_);
+    counter_++;
+}
+```
+
+> ⚠️ **`counter_` is never initialized** in your code. It happens to start at 0 because of zero-initialization of primitives in some contexts, but **you should explicitly initialize it** to avoid undefined behavior:
+> ```cpp
+> MyNode() : Node("cpp_test"), counter_(0) {   // ← initialize in member init list
+>     // ...
+> }
+> ```
+
+`RCLCPP_INFO` uses **printf-style formatting** (different from Python's `+ str(...)`):
+
+```cpp
+RCLCPP_INFO(this->get_logger(), "Hello %d", counter_);
+//                              ↑       ↑   ↑
+//                              format  int  argument
+```
+
+Common format specifiers: `%d` int, `%f` float, `%s` C string, `%.2f` float with 2 decimals.
+
+---
+
+## Execution Flow
+
+```
+main()
+  ↓
+rclcpp::init()                    ROS2 initialized
+  ↓
+std::make_shared<MyNode>()        →  MyNode() constructor runs:
+                                       - Node("cpp_test") sets name
+                                       - prints "Hello world"
+                                       - registers timer (does NOT fire yet)
+  ↓
+rclcpp::spin(node)                BLOCKS — processes callbacks
+                                  every 1 second → timerCallback() fires
+                                  ↓
+                                  "Hello 0", "Hello 1", "Hello 2", ...
+                                  ↓
+Ctrl+C                            spin returns
+  ↓
+rclcpp::shutdown()                clean exit
+```
+
+---
+
+## Build, Source, Run (Unchanged Workflow)
+
+No changes needed in `CMakeLists.txt` — the `add_executable` from class 20 still applies.
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select my_cpp_pkg
+# Finished <<< my_cpp_pkg [3.59s]
+
+. install/setup.bash
+ros2 run my_cpp_pkg cpp_node
+```
+
+Expected output:
+```
+[INFO] [...] [cpp_test]: Hellow world
+[INFO] [...] [cpp_test]: Hello 0
+[INFO] [...] [cpp_test]: Hello 1
+[INFO] [...] [cpp_test]: Hello 2
+^C[INFO] [...] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+```
+
+> 💡 Typo caught in your terminal: `. install/setup.bas` (missing `h`). Tab completion would have caught this — try `. install/se<Tab>`.
+
+---
+
+## C++ Template (Strip the timer/counter if not needed)
+
+```cpp
+#include "rclcpp/rclcpp.hpp"
+
+class MyNode : public rclcpp::Node {
+    public:
+        MyNode() : Node("node_name") {
+            // publishers, subscribers, timers, etc. go here
+        }
+
+    private:
+        // class attributes (with trailing _)
+};
+
+int main(int argc, char **argv) {
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<MyNode>();
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
+```
+
+---
+
+## Python vs C++ OOP — Side by Side
+
+| Step | Python | C++ |
+|---|---|---|
+| Class declaration | `class MyNode(Node):` | `class MyNode : public rclcpp::Node {` |
+| Parent constructor | `super().__init__("name")` | `MyNode() : Node("name") { }` |
+| Access node methods | `self.get_logger()` | `this->get_logger()` |
+| Log with variable | `"Hello " + str(counter_)` | `"Hello %d", counter_` |
+| Create timer | `self.create_timer(1.0, self.timer_callback)` | `this->create_wall_timer(std::chrono::seconds(1), std::bind(&MyNode::timerCallback, this))` |
+| Timer attribute type | (none — just stored on `self`) | `rclcpp::TimerBase::SharedPtr timer_;` |
+| Instantiate in main | `node = MyNode()` | `auto node = std::make_shared<MyNode>();` |
+
+---
+
+## Key Takeaways
+
+1. **Inherit publicly from `rclcpp::Node`** → unlocks all node functionality via `this->`
+2. **Initializer list calls the parent constructor**: `MyNode() : Node("name") { ... }`
+3. **Always declare timer/pub/sub as `::SharedPtr` member attributes** so they outlive the constructor
+4. **`std::bind(&ClassName::method, this)`** — memorize this pattern; you'll use it constantly
+5. **Initialize primitive attributes explicitly** — don't rely on default zero-init
+6. **`RCLCPP_INFO` uses printf-style** (`%d`, `%f`, `%s`) — different from C++ streams
+
+---
+
+## What's Next
+
+- Use the template to start building real nodes
+- Publishers / subscribers — same pattern: declare as `SharedPtr` member, create in constructor, bind callbacks for subscribers
